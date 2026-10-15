@@ -11,6 +11,16 @@ Memoria del proyecto. Estado, decisiones y hechos verificados. **No guardar secr
 - **Remotos**: raíz `github.com/Alonso91CL/OpenOutreachSystem` · panel `github.com/Alonso91CL/openoutreach-web` · fork `github.com/Alonso91CL/OpenOutreach`
 - **Creado**: 2026-10-14.
 
+## Herramientas / entorno
+
+- **gh (GitHub CLI)** `2.102.0` instalado global con winget, en PATH de máquina
+  (`C:\Program Files\GitHub CLI\gh.exe`).
+- Autenticado como `Alonso91CL`: protocolo `https`, token en keyring, scopes
+  `gist`, `read:org`, `repo`.
+- `git` usa el credential helper de gh para `github.com` y `gist.github.com`.
+- Sin scope `workflow`: un push que toque `.github/workflows/` fallará hasta añadirlo
+  (`gh auth refresh -s workflow`).
+
 ## Estructura actual
 
 ```
