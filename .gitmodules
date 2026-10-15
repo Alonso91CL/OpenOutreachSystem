@@ -1,0 +1,3 @@
+[submodule "OpenOutreach"]
+	path = OpenOutreach
+	url = https://github.com/Alonso91CL/OpenOutreach.git

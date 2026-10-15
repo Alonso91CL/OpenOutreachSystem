@@ -1,0 +1,15 @@
+# Secretos / entorno
+.env
+*.env
+
+# Datos de runtime (volúmenes Docker)
+data/
+state/
+
+# Panel web: repo git propio, se integrará como submódulo cuando tenga URL remota
+openoutreach-web/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
