@@ -4,3 +4,4 @@
 [submodule "openoutreach-web"]
 	path = openoutreach-web
 	url = https://github.com/Alonso91CL/openoutreach-web.git
+	branch = develop
