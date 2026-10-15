@@ -16,7 +16,7 @@ leads, calificación, exportación y envío, más un panel web de control y su c
 | Ruta | Naturaleza | Regla |
 |------|-----------|-------|
 | `OpenOutreach/` | **submódulo** → `github.com/Alonso91CL/OpenOutreach` | No modificar sin motivo. Si se toca, se hace en el fork y se sube el puntero del submódulo en la raíz |
-| `openoutreach-web/` | repo git propio (gitflow) | Ignorado por la raíz hasta que sea submódulo |
+| `openoutreach-web/` | **submódulo** → `github.com/Alonso91CL/openoutreach-web` | Trabajo del panel; gitflow propio |
 | `docker/` | archivos del repo raíz | Aquí van Dockerfile, compose y `.env.example` |
 | `PLAN.md`, `README.md`, `AGENTS.md`, `MEMORY.md` | archivos del repo raíz | Mantener actualizados |
 

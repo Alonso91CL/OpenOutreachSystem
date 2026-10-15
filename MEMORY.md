@@ -8,6 +8,7 @@ Memoria del proyecto. Estado, decisiones y hechos verificados. **No guardar secr
 - **Proyecto**: OpenOutreachSystem — prospección B2B con OpenOutreach para **Pivot IT** (`pivotit.cl`).
 - **Dueño**: Alonso (`Alonso91CL`).
 - **Ruta local**: `C:\Users\Alonso\Documents\Project\OpenOutreachSystem`
+- **Remotos**: raíz `github.com/Alonso91CL/OpenOutreachSystem` · panel `github.com/Alonso91CL/openoutreach-web` · fork `github.com/Alonso91CL/OpenOutreach`
 - **Creado**: 2026-10-14.
 
 ## Estructura actual
@@ -17,7 +18,7 @@ OpenOutreachSystem\                 repo raíz git (rama develop; main existe)
 ├── .gitmodules                     submódulo OpenOutreach
 ├── .gitignore                      ignora .env, data/, state/, openoutreach-web/
 ├── OpenOutreach\                   submódulo → github.com/Alonso91CL/OpenOutreach (rama main)
-├── openoutreach-web\               repo git propio (gitflow, rama develop) [ignorado por la raíz]
+├── openoutreach-web\               submódulo → github.com/Alonso91CL/openoutreach-web (main/develop)
 ├── docker\                         archivos del repo raíz (sin git propio)
 ├── PLAN.md
 ├── README.md
@@ -32,7 +33,7 @@ OpenOutreachSystem\                 repo raíz git (rama develop; main existe)
 | 2026-10-14 | Tres partes separadas: fork, panel web, docker | Aislar responsabilidades |
 | 2026-10-14 | `docker/` NO es submódulo: sus archivos viven en el repo raíz | Capa de despliegue del conjunto |
 | 2026-10-14 | `OpenOutreach/` es submódulo del fork del usuario | Seguir upstream y versionar el puntero |
-| 2026-10-14 | `openoutreach-web/` con git propio (gitflow), ignorado por la raíz hasta tener URL remota | Será submódulo cuando exista remoto |
+| 2026-10-14 | `openoutreach-web/` declarado como **submódulo** | Repo remoto disponible |
 | 2026-10-14 | Proyecto renombrado `llm` → `OpenOutreachSystem` | Nombre definitivo elegido por el usuario |
 | 2026-10-14 | Panel en FastAPI + HTMX, consumo por contrato JSON de la CLI | Simplicidad y desacople del esquema interno |
 
@@ -63,8 +64,8 @@ OpenOutreachSystem\                 repo raíz git (rama develop; main existe)
 
 ## Pendientes / preguntas abiertas
 
-- [ ] **URL del remoto de `openoutreach-web`** para convertirlo en submódulo.
-- [ ] **URL del remoto del repo raíz** (`OpenOutreachSystem` en GitHub): falta crearlo; `gh` no está instalado.
+- [x] **Remoto de `openoutreach-web`** configurado y convertido en submódulo.
+- [x] **Remoto del repo raíz** configurado y ramas `main` + `develop` subidas.
 - [ ] Validar **cobertura de datos en Chile** con `openoutreach find 5` (gratis, no gasta).
 - [ ] Decidir alcance del panel: ¿solo búsqueda + CSV, o **envío completo** desde la UI?
 - [ ] Elegir siguiente fase: **F0** (Docker funcional) o **F2** (andamiaje del panel).

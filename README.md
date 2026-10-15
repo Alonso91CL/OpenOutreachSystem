@@ -8,28 +8,32 @@ Aquí viven la configuración de despliegue, el plan y los submódulos.
 | Ruta | Qué es | Cómo se versiona |
 |------|--------|------------------|
 | `OpenOutreach/` | Fork del orquestador (upstream `eracle/OpenOutreach`) | **submódulo** → `https://github.com/Alonso91CL/OpenOutreach.git` |
-| `openoutreach-web/` | Panel web de control (FastAPI + HTMX) | repo git propio. Pendiente de URL remota; se agregará como **submódulo** |
+| `openoutreach-web/` | Panel web de control (FastAPI + HTMX) | **submódulo** → `https://github.com/Alonso91CL/openoutreach-web.git` |
 | `docker/` | Configuración Docker (imagen, compose, `.env`) | archivos de **este** repo raíz |
 | `PLAN.md` | Plan de Docker + panel web | archivos de **este** repo raíz |
+| `AGENTS.md` | Instrucciones para agentes | archivos de **este** repo raíz |
+| `MEMORY.md` | Estado y decisiones del proyecto | archivos de **este** repo raíz |
+
+## Repositorios remotos
+
+- **Raíz**: `https://github.com/Alonso91CL/OpenOutreachSystem.git` — ramas `main` + `develop`
+- **Panel**: `https://github.com/Alonso91CL/openoutreach-web.git` — ramas `main` + `develop`
+- **Orquestador (fork)**: `https://github.com/Alonso91CL/OpenOutreach.git` — rama `main`
 
 ## Notas de diseño
 
-- **`OpenOutreach/`** es un submódulo que apunta al fork. Se actualiza con
-  `git submodule update --remote OpenOutreach`, sin mezclarse con el trabajo del panel.
-  Su rama `main` sigue el upstream, que publica una release en cada push a `main`.
-- **`openoutreach-web/`** es una aplicación nueva. Consume la CLI por su contrato JSON
-  (`find --json`, `status --json`), nunca lee tablas internas. Vive como repo separado y
-  se integrará como submódulo cuando tenga remoto.
-- **`docker/`** no es submódulo: sus archivos forman parte de este repo y son la capa de
-  despliegue del conjunto.
-- **La raíz `OpenOutreachSystem` no anida git repos sin declarar.** El panel queda en `.gitignore`
-  mientras no sea submódulo, para que git no lo trate como repo embebido.
+- **Submódulos**: se actualizan con `git submodule update --remote <ruta>`, sin mezclar el trabajo
+  del panel con el fork.
+- **`docker/`** no es submódulo: sus archivos son de este repo y forman la capa de despliegue.
+- El panel **consume la CLI por su contrato JSON** (`find --json`, `status --json`), nunca lee tablas
+  internas de SQLite.
+- Los dos repos nuevos usan **gitflow** (`main` + `develop`); el fork sigue su `main` trunk-based.
 
 ## Estado
 
-- [x] Fork clonado y declarado como submódulo en `OpenOutreach/`.
-- [x] `openoutreach-web/` renombrado e inicializado con git (gitflow: `main` + `develop`).
-- [x] `docker/` integrado como archivos del repo raíz.
+- [x] Fork declarado como submódulo en `OpenOutreach/`.
+- [x] Panel `openoutreach-web/` declarado como submódulo.
+- [x] Remotos configurados y ramas `main` + `develop` subidas.
 - [ ] Validar cobertura de datos en Chile con `openoutreach find 5` (gratis).
 - [ ] F0 Docker funcional · F2 andamiaje del panel.
 
