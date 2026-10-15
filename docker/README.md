@@ -2,7 +2,7 @@
 
 Configuración de Docker para correr OpenOutreach de forma persistente junto al panel web.
 
-Estos archivos viven dentro del repo raíz `llm` (no son submódulo). No dependen del código
+Estos archivos viven dentro del repo raíz `OpenOutreachSystem` (no son submódulo). No dependen del código
 del fork (`../OpenOutreach`) ni de la interfaz (`../openoutreach-web`).
 
 ## Contenido previsto

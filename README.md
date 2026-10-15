@@ -1,4 +1,4 @@
-# llm
+# OpenOutreachSystem
 
 Repositorio principal del proyecto de prospección con OpenOutreach, orientado a Pivot IT.
 Aquí viven la configuración de despliegue, el plan y los submódulos.
@@ -22,7 +22,7 @@ Aquí viven la configuración de despliegue, el plan y los submódulos.
   se integrará como submódulo cuando tenga remoto.
 - **`docker/`** no es submódulo: sus archivos forman parte de este repo y son la capa de
   despliegue del conjunto.
-- **La raíz `llm` no anida git repos sin declarar.** El panel queda en `.gitignore`
+- **La raíz `OpenOutreachSystem` no anida git repos sin declarar.** El panel queda en `.gitignore`
   mientras no sea submódulo, para que git no lo trate como repo embebido.
 
 ## Estado
